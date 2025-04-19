@@ -1,0 +1,106 @@
+* {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  border: 3px solid red;
+  padding: 0;
+  background-color: grey;
+  height: 200vh; /* Set height to 200vh to allow scrolling */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: grey;
+}
+
+.search-container {
+  padding: 20px;  
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.box-container {
+  display: flex;
+  background-color: lightblue;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.recipe-box-container {
+  flex: 1;
+  margin: 20px; /* Center the box container */
+}
+
+.recipe-box-list {
+  top: 0;
+  left: 0;
+  background-color: rgb(161, 192, 202);
+  padding: 10px;
+  list-style: none;
+}
+
+.recipe-box {
+  background-color: grey;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 20px;
+  display: flex;
+}
+
+.about-box {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  background-color: rgb(197, 235, 238);
+  padding: 10px;
+  border: 2px solid lightblue; /* Add a color here */
+  border-radius: 5px;
+  margin: 0px;
+  width: 400px; /* Set a fixed width for the about box */
+}
+
+.about-box:hover {
+  background-color: lightgray;
+  color: black;
+  border: 2px solid rgb(197, 235, 238); /* Add a color here */
+}
+
+.or {
+  color: blue;
+  font-size: 12px;
+}
+
+.log-in-box {
+  padding: 10px;
+  border: 2px solid; /* Add a color here */
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid white;
+}
