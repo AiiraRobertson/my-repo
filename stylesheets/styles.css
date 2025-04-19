@@ -23,7 +23,7 @@ body {
 }
 
 .search-container {
-  padding: 20px;  
+  padding: 20px;
   margin: 20px;
   display: flex;
   justify-content: center;
@@ -97,10 +97,18 @@ a {
 .footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100%;  
   background-color: grey;
   color: white;
   text-align: center;
   padding: 10px;
   border-top: 2px solid white;
+}
+
+.footer-flex-list {
+  justify-content: center;
+  gap: 30px;
+  display: flex;
+  list-style: none;
+  padding: 0;
 }
