@@ -97,7 +97,7 @@ a {
 .footer {
   position: fixed;
   bottom: 0;
-  width: 100%;  
+  width: 100%;
   background-color: grey;
   color: white;
   text-align: center;
@@ -111,4 +111,51 @@ a {
   display: flex;
   list-style: none;
   padding: 0;
+}
+
+.button-one {
+  text-transform: uppercase;
+  display: inline-block;
+  border: 2px solid lightblue; /* Add a color here */
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: red;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button-one::before {
+  transition: o.5s ease all;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: red;
+  z-index: -1;
+}
+
+.button-one:hover,
+.button-one:focus {
+  color: white;
+}
+
+.button-one:hover::before,
+.button-one:focus::before {
+  transition: 0.5s ease all;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-one:active {
+  transform: scale(0.9);
 }
