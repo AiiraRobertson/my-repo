@@ -6,7 +6,6 @@
     <title>Document</title>
     <div class="header"><h1>Odin Recipes</h1></div>
     <link rel="stylesheet" href="/stylesheets/styles.css" />
-    <link rel="javascript" href="/javascript/javascript.js" />
   </head>
   <body>
     <div class="search-container">
@@ -44,12 +43,12 @@
         Happy cooking!
       </p>
       <div class="log-in-box">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <input type="submit" value="Log in" />
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <input type="submit" value="Log in" onclick="handleLogin()" />
         <div class="or">New bees! Sign up below...</div>
         <div class="sign-up-box">
-          <input type="button" value="Sign up" />
+          <input type="button" value="Sign up" onclick="handleSignUp()" />
         </div>
       </div>
     </div>
