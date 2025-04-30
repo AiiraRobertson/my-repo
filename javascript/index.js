@@ -31,3 +31,8 @@ document.querySelector(".button-one").addEventListener("click", function () {
         instructions and tips to help you create a fantastic meal. Enjoy
         cooking!`;
 });
+
+function favouriteAnimal(animal) {
+  return animal + " is my favourite animal!";
+}
+console.log(favouriteAnimal("Dog"));
