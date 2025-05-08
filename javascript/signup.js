@@ -55,3 +55,31 @@ form.addEventListener("submit", (event) => {
     form.reset(); // Optionally reset the form after submission
   }
 });
+
+// Function to handle FizzBuzz logic
+function fizzBuzz(number) {
+  for (let i = 1; i <= number; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+// Example usage: Add an event listener to a button to trigger FizzBuzz
+const fizzBuzzButton = document.getElementById("fizzbuzz-button");
+fizzBuzzButton.addEventListener("click", () => {
+  const numberInput = document.getElementById("fizzbuzz-number").value;
+  const number = parseInt(numberInput, 10);
+
+  if (!isNaN(number) && number > 0) {
+    fizzBuzz(number);
+  } else {
+    alert("Please enter a valid positive number.");
+  }
+});
