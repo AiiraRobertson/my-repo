@@ -11,3 +11,8 @@ function frame() {
 
 var id = setInterval(frame, 10);
 
+window.onload = function () {
+  alert(
+    "Thank you for coming! We hope you enjoy your stay. \n\nPlease note that this is a demo version of the website. \n\nIf you have any questions or need assistance, feel free to reach out to us. \n\nHave a great day!"
+  );
+};

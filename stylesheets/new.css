@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
 body {
   height: 1200px;
 }
@@ -99,4 +115,28 @@ a {
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+  color: #4caf50;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
