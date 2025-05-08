@@ -111,13 +111,6 @@ body {
   transform: scale(0.95);
 }
 
-a {
-  text-decoration: none;
-  list-style-type: none;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
 .footer {
   display: flex;
   justify-content: center;
@@ -136,8 +129,17 @@ a {
   color: #4caf50;
   margin-left: 5px;
   text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  font-weight: bold;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  text-decoration:underline;
+  color: #ffd900;
+
+}
+
+.footer-flex-list {
+  list-style-type: none;
 }
