@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/stylesheets/signup.css" />
+    <a href="/recipe/newrecipe.html" class="arrow-button">←</a>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+    <form action="/submit-signup" method="post">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required />
+      <br /><br />
+
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" required />
+      <br /><br />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+      <br /><br />
+
+      <label for="nationality">Nationality:</label>
+      <input type="text" id="nationality" name="nationality" required />
+      <br /><br />
+
+      <label for="phone-number">Phone Number:</label>
+      <input type="tel" id="phone-number" name="phone-number" required />
+      <br /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <br /><br />
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input
+        type="password"
+        id="confirm-password"
+        name="confirm-password"
+        required
+      />
+      <br /><br />
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="login-link">
+      <p>Already have an account? <a href="/recipe/login.html">Log in</a></p>
+  </body>
+</html>
