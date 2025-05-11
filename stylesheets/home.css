@@ -5,10 +5,9 @@
 }
 
 body {
-  height: 1200px;
+  height: 800px;
   font-size: 18px;
   font-family: sans-serif;
-  
 }
 
 a:link,
@@ -21,10 +20,9 @@ a:hover {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: space-between;
-
   width: 100%;
   padding: 50px;
   background: #d6e9fe;
@@ -102,9 +100,8 @@ a:hover {
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: absolute;
   bottom: 0;
-
 }
 
 .text-box {
@@ -136,4 +133,31 @@ a:hover {
 .button-text {
   font-weight: bold;
   font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer a {
+  color: #4caf50;
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #8bc78d;
+}
+.footer a:active {
+  color: #4caf50;
 }
