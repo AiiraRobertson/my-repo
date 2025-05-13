@@ -162,8 +162,7 @@ a:hover {
   color: #4caf50;
 }
 
-.sidebar,
-ul {
+.sidebar {
   position: sticky;
   top: 0;
   right: 0;
@@ -173,5 +172,13 @@ ul {
   background-color: #f1f1f1;
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  list-style-type: none;
+}
+
+.offer-list {
+  color: #45a049;
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  list-style: none;
 }
