@@ -135,8 +135,7 @@ a:hover {
 
 .footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   padding: 20px;
   background-color: #333;
   color: #fff;
@@ -151,10 +150,15 @@ a:hover {
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s ease;
+  font-weight: bold;
 }
 
+li {
+  padding: 3px;
+  margin: 3px;
+}
 .footer a:hover {
-  color: #8bc78d;
+  color: #e46d0d;
 }
 .footer a:active {
   color: #4caf50;
@@ -162,7 +166,7 @@ a:hover {
 
 .footer-flex-list {
   list-style-type: none;
-  flex: 1;
+  display: flex;
 }
 
 .sidebar {
@@ -183,11 +187,17 @@ a:hover {
   padding: 10px;
   margin: 10px;
   background-color: #f9f9f9;
-
   border-radius: 5px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 .offer-list:hover {
   background-color: #faebeb;
   cursor: pointer;
+}
+
+.cop-right {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
 }
