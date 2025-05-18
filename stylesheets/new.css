@@ -27,15 +27,28 @@ body {
 .container {
   display: flex;
   justify-content: center;
+  width: 100%;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+}
+
+p {
+  font-size: 24px;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+.container:hover {
+  background-color: #f0f0f0;
+  border-color: #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .example {
   display: flex;
   justify-content: flex-start;
-
   width: 800px;
   margin: 50px 0;
-  background-color: #d6e9fe;
 }
 
 .item img {
@@ -49,9 +62,7 @@ body {
 }
 
 .item-absolute {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  position: null;
 }
 
 .absolute {
@@ -116,7 +127,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #333;;
+  background-color: #333;
   color: #fff;
   font-size: 14px;
   position: sticky;
@@ -135,9 +146,8 @@ body {
 }
 
 .footer a:hover {
-  text-decoration:underline;
+  text-decoration: underline;
   color: #ffd900;
-
 }
 
 .footer-flex-list {
