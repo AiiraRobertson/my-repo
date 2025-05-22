@@ -2,6 +2,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f8f8f8;
+  background-color: #225758;
   color: #222;
+}
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 20px;
 }
