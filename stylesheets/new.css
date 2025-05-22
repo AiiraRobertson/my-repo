@@ -5,15 +5,43 @@ body {
   background-color: #225758;
   color: #222;
 }
-h1 {
+
+.header {
   color: #fff;
   text-align: center;
   font-size: 2.5em;
-  margin-top: 20px;
+  border: 1px solid #225758;
+  background-color: #3e6c6d;
+  position: sticky;
+  top: 0px;
+  text-decoration: none;
 }
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
 h2 {
   color: #fff;
   text-align: center;
   font-size: 2em;
   margin-top: 20px;
+}
+
+.text-intro {
+  color: #fff;
+  font-size: 1em;
+  margin-top: 20px;
+  word-spacing: 2px;
+  padding: 0 20px;
+  border: 2px solid #225758;
+  background-color: #3e6c6d;
+}
+
+.text-intro:hover {
+  background-color: #225758;
+  color: #fff;
+  box-shadow: black 0px 0px 10px;
+  transition: ease-in-out;
+  transform: scale(1.02);
 }
