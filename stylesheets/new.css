@@ -9,7 +9,7 @@ body {
 .header {
   color: #fff;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 1.7em;
   border: 1px solid #225758;
   background-color: #3e6c6d;
   position: sticky;
@@ -27,6 +27,12 @@ h2 {
   font-size: 2em;
   margin-top: 20px;
 }
+h2:hover {
+  background-color: #225758;
+  color: #ffd700;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
 
 .text-intro {
   color: #fff;
@@ -36,12 +42,113 @@ h2 {
   padding: 0 20px;
   border: 2px solid #225758;
   background-color: #3e6c6d;
+  width: 80%;
 }
 
 .text-intro:hover {
   background-color: #225758;
-  color: #fff;
   box-shadow: black 0px 0px 10px;
   transition: ease-in-out;
-  transform: scale(1.02);
+  transform: scale(1.01);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 20px;
+}
+.sidebar {
+  position: fixed;
+  top: 143px; /* adjust if your header height changes */
+  right: 0;
+  width: 250px;
+  height: calc(70vh - 40px); /* full height minus header */
+  background-color: #3e6c6d;
+  color: yellow;
+  border-left: 2px solid #225758;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  text-decoration-thickness: 5px;
+  z-index: 1000;
+}
+
+.sign-up-container {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background-color: #238a8b;
+  border: 2px solid #225758;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(34, 87, 88, 0.15);
+  width: 300px;
+  max-width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sign-up-container:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 8px 28px rgba(34, 87, 88, 0.25);
+  border-color: #3e6c6d;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #225758;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(34, 87, 88, 0.12);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.action-button a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.action-button:hover,
+.action-button:focus {
+  background-color: #9b8b2f;
+  color: #225758;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(34, 87, 88, 0.18);
+  outline: none;
+}
+
+.footer {
+  background-color: #3e6c6d;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #a9c6c7;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+li {
+  margin: 10px 0;
+  background-color: #3e6c6d;
+  list-style: none;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+  transition: color 0.3s;
+  cursor: pointer;
 }
