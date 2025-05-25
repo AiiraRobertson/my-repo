@@ -71,7 +71,7 @@ h2:hover {
 }
 .sidebar {
   position: absolute;
-  top: 0%; /* adjust if your header height changes */
+  top: 23%; /* adjust if your header height changes */
   right: 0;
   width: 250px;
   height: calc(90vh - 60px); /* full height minus header */
@@ -121,7 +121,7 @@ h2:hover {
 }
 
 .action-button a {
-  color: #a18e1e;
+  color: #faf9f5;
   text-decoration: none;
 }
 
