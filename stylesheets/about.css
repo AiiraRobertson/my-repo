@@ -1,0 +1,110 @@
+body {
+  background-color: #f0f4f4;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.arrow-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  font-size: 40px;
+  background-color: #3e6c6d;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.arrow-button:hover {
+  background-color: #225758;
+  color: #ffd700;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+  color: #fff;
+  text-align: center;
+  font-size: 1.7em;
+  border: 1px solid #225758;
+  background-color: #3e6c6d;
+  position: sticky;
+  top: 0px;
+  text-decoration: none;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: rgb(200, 233, 233);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.about-distro {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: rgb(200, 233, 233);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.upload-info {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: rgb(200, 233, 233);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.container .head-one {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: #3e6c6d 1px 1px 2px;
+  font-weight: bold;
+}
+
+.about-distro .head-two {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: #3e6c6d 1px 1px 2px;
+  font-weight: bold;
+}
+
+.upload-info .head-two {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: #3e6c6d 1px 1px 2px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #3e6c6d;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #a9c6c7;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+}
