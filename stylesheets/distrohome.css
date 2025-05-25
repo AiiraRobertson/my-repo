@@ -4,6 +4,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #225758;
   color: #222;
+  height: 340vh;
 }
 
 .header {
@@ -19,6 +20,15 @@ body {
 .header a {
   color: #fff;
   text-decoration: none;
+}
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: rgb(200, 233, 233);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
 }
 
 h2 {
@@ -60,11 +70,11 @@ h2:hover {
   margin: 20px;
 }
 .sidebar {
-  position: fixed;
-  top: 143px; /* adjust if your header height changes */
+  position: absolute;
+  top: 0%; /* adjust if your header height changes */
   right: 0;
   width: 250px;
-  height: calc(70vh - 40px); /* full height minus header */
+  height: calc(90vh - 60px); /* full height minus header */
   background-color: #3e6c6d;
   color: yellow;
   border-left: 2px solid #225758;
