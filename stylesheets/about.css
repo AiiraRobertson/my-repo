@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   background-color: #f0f4f4;
   margin: 0;
@@ -40,11 +41,17 @@ body {
   text-decoration: none;
 }
 
+=======
+>>>>>>> a1a31cde99213f5f4e2e87bb80b9c17d7148e7c6
 .container {
   max-width: 800px;
   margin: 40px auto;
   padding: 24px;
+<<<<<<< HEAD
   background-color: rgb(200, 233, 233);
+=======
+  background-color: #fff;
+>>>>>>> a1a31cde99213f5f4e2e87bb80b9c17d7148e7c6
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   font-family: Arial, sans-serif;
@@ -54,7 +61,11 @@ body {
   max-width: 800px;
   margin: 40px auto;
   padding: 24px;
+<<<<<<< HEAD
   background-color: rgb(200, 233, 233);
+=======
+  background-color: #fff;
+>>>>>>> a1a31cde99213f5f4e2e87bb80b9c17d7148e7c6
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   font-family: Arial, sans-serif;
@@ -64,12 +75,17 @@ body {
   max-width: 800px;
   margin: 40px auto;
   padding: 24px;
+<<<<<<< HEAD
   background-color: rgb(200, 233, 233);
+=======
+  background-color: #fff;
+>>>>>>> a1a31cde99213f5f4e2e87bb80b9c17d7148e7c6
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   font-family: Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 .container .head-one {
   font-size: 24px;
   color: #333;
@@ -97,6 +113,8 @@ body {
   font-weight: bold;
 }
 
+=======
+>>>>>>> a1a31cde99213f5f4e2e87bb80b9c17d7148e7c6
 footer {
   background-color: #3e6c6d;
   color: #fff;
@@ -107,4 +125,8 @@ footer {
   bottom: 0;
   left: 0;
   font-size: 12px;
+<<<<<<< HEAD
+=======
+  padding: 10px;
+>>>>>>> a1a31cde99213f5f4e2e87bb80b9c17d7148e7c6
 }
