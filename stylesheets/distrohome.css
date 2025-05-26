@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #225758;
+  background-color: white;
   color: #222;
   height: 340vh;
 }
@@ -32,14 +32,14 @@ body {
 }
 
 h2 {
-  color: #fff;
+  color: #3e6c6d;
   text-align: center;
   font-size: 2em;
   margin-top: 20px;
 }
 h2:hover {
-  background-color: #225758;
-  color: #ffd700;
+  background-color: #3e6c6d;
+  color: #fff;
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
