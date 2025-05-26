@@ -58,8 +58,6 @@ h2:hover {
 .text-intro:hover {
   background-color: #225758;
   box-shadow: black 0px 0px 10px;
-  transition: ease-in-out;
-  transform: scale(1.01);
 }
 
 .item {
