@@ -1,38 +1,40 @@
-const button = document.querySelector("button");
+const button = document.querySelector(".button-one");
 
-function greet() {
-  const name = prompt("What is your name?");
-  const greeting = document.querySelector("#greeting");
-  greeting.textContent = `Hello ${name}, nice to see you!`;
-}
-
-function handleLogin() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  if (username && password) {
-    alert(`Welcome, ${username}!`);
-  } else {
-    alert("Please enter both username and password.");
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
   }
+  return color;
 }
 
-function handleSignUp() {
-  alert("Redirecting to sign-up page...");
-  // Add redirection logic here if needed
+function createBubble() {
+  const bubble = document.createElement("div");
+  bubble.style.position = "absolute";
+  bubble.style.width = "40px";
+  bubble.style.height = "40px";
+  bubble.style.borderRadius = "50%";
+  bubble.style.background = getRandomColor();
+  bubble.style.left = `${Math.random() * (window.innerWidth - 40)}px`;
+  bubble.style.top = `${Math.random() * (window.innerHeight - 40)}px`;
+  bubble.style.zIndex = 1000;
+  bubble.style.opacity = 0.7;
+  document.body.appendChild(bubble);
+
+  setTimeout(() => {
+    bubble.remove();
+  }, 2000);
 }
 
-document.querySelector(".button-one").addEventListener("click", function () {
-  document.getElementById(
-    "greeting"
-  ).textContent = `Welcome to my recipe collection! Here, you'll find a variety of
-        delicious recipes that I have gathered over the years. Whether you're
-        looking for a quick weeknight dinner or a special dish for a
-        celebration, I've got you covered. Each recipe includes step-by-step
-        instructions and tips to help you create a fantastic meal. Enjoy
-        cooking!`;
+button.addEventListener("click", () => {
+  let count = 0;
+  const maxBubbles = 10;
+  const interval = setInterval(() => {
+    createBubble();
+    count++;
+    if (count >= maxBubbles) {
+      clearInterval(interval);
+    }
+  }, 200 + Math.random() * 300); // random interval between 200-500ms
 });
-
-function favouriteAnimal(animal) {
-  return animal + " is my favourite animal!";
-}
-console.log(favouriteAnimal("Dog"));
