@@ -85,12 +85,12 @@ h2:hover {
 
 .sign-up-container {
   position: fixed;
-  top: 0%;
-  left: 0%;
+  top: 43%;
+  left: 1%;
   margin: 40px auto;
   padding: 30px 40px;
   background-color: #238a8b;
-  border: 2px solid #225758;
+  border: 2px solid red;
   border-radius: 12px;
   box-shadow: 0 4px 18px rgba(34, 87, 88, 0.15);
   width: 300px;
@@ -130,6 +130,29 @@ h2:hover {
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 6px 18px rgba(34, 87, 88, 0.18);
   outline: none;
+}
+
+.upload-prompt {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.4em;
+}
+
+.upload-prompt:hover,
+.upload-prompt:focus-within {
+  background-color: #d0ecec;
+  border-color: #225758;
+  box-shadow: 0 4px 18px rgba(34, 87, 88, 0.15);
+}
+
+.upload-prompt input[type="file"] {
+  margin-top: 16px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #3e6c6d;
+  background-color: #fff;
+  color: #225758;
+  cursor: pointer;
 }
 
 .footer {
