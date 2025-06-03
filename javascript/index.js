@@ -47,4 +47,3 @@ const loginButton = document.querySelector(".login-button");
 if (loginButton) {
   loginButton.addEventListener("click", handleLogin);
 }
-console.log("JavaScript loaded successfully!");

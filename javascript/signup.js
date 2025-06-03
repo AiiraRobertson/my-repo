@@ -72,7 +72,7 @@ function fizzBuzz(number) {
 }
 
 // Example usage: Add an event listener to a button to trigger FizzBuzz
-const fizzBuzzButton = document.getElementById("fizzbuzz-button");
+const fizzBuzzButton = document.getElementById(".submit");
 fizzBuzzButton.addEventListener("click", () => {
   const numberInput = document.getElementById("fizzbuzz-number").value;
   const number = parseInt(numberInput, 10);
