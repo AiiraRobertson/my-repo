@@ -47,3 +47,8 @@ const loginButton = document.querySelector(".login-button");
 if (loginButton) {
   loginButton.addEventListener("click", handleLogin);
 }
+
+// Function to handle the login button click
+function handleLogin() {
+  window.location.href = "distrohome.html";
+}
