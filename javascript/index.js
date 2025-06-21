@@ -62,3 +62,4 @@ function sumOfTripledEvens(array) {
     }
   }
   return sum;
+}
