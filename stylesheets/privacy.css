@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  height: 200vh;
 }
 .header {
   color: #fff;
@@ -16,11 +16,19 @@ body {
   text-decoration: none;
 }
 
-.tit {
-  text-align: center;
-  font-weight: bold;
+.intro {
+  background-color: #e8faf6;
+  border: 1px solid #b7e4c7;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-size: 1.15rem;
   color: #225758;
-  font-size: 32px;
+  box-shadow: 0 2px 8px rgba(34, 87, 88, 0.07);
+}
+
+.intro h2 {
+  text-align: center;
 }
 
 .information-collection {
