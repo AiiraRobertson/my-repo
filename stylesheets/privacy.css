@@ -1,3 +1,28 @@
+body {
+  height: 100vh;
+}
+.header {
+  color: #fff;
+  text-align: center;
+  font-size: 1.7em;
+  border: 1px solid #225758;
+  background-color: #3e6c6d;
+  position: sticky;
+  top: 0px;
+  text-decoration: none;
+}
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.tit {
+  text-align: center;
+  font-weight: bold;
+  color: #225758;
+  font-size: 32px;
+}
+
 .information-collection {
   background-color: #f9f9f9;
   border: 1px solid pink;
@@ -7,4 +32,48 @@
   font-size: 1.1rem;
   color: #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.how-we-use {
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #444;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08);
+}
+
+.information-sharing {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #22577a;
+  box-shadow: 0 2px 8px rgba(33, 87, 122, 0.08);
+}
+
+.contact-us {
+  background-color: #fff0f6;
+  border: 1px solid #ffadd2;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #a61e4d;
+  box-shadow: 0 2px 8px rgba(166, 30, 77, 0.08);
+}
+
+.search-name-num {
+  background-color: #f0f5ff;
+  border: 1px solid #adc6ff;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  color: #2f54eb;
+  box-shadow: 0 1px 6px rgba(47, 84, 235, 0.07);
 }
