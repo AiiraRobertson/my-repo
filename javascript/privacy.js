@@ -4,6 +4,9 @@ const contacts = [
   "Bill:7654322",
   "Mary:9998769",
   "Dianne:9384975",
+  "Likkle:0533678507",
+  "Rampage:0591879020",
+  "Nima:0592197163",
 ];
 const para = document.querySelector("p");
 const input = document.querySelector("input");
