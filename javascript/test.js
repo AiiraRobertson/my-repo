@@ -3,8 +3,6 @@ const display = container.firstElementChild;
 console.log(display);
 
 const controls = document.querySelector(".controls");
-const display = controls.previousElementSibling;
-console.log(display);
 
 const div = document.createElement("div");
 div.style.color = "red";
@@ -15,3 +13,7 @@ div.setAttribute(
 );
 
 div.setAttribute("id", "theDiv");
+div.getAttribute("id");
+div.classList.add("new");
+div.textContent = "This is a new div element.";
+div.innerHTML = "<strong>This is a new div element.</strong>";
