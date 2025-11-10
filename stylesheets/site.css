@@ -1,0 +1,51 @@
+/* Shared site stylesheet: variables, typography, layout and components */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #f6fbfb;
+  --card: #e6f7f7;
+  --accent: #2f6f6f;
+  --muted: #6b7a7a;
+  --white: #ffffff;
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1616}
+a{color:var(--accent);text-decoration:none}
+
+/* Container */
+.container, .about-distro, .upload-info{max-width:1000px;margin:36px auto;padding:28px;background:var(--card);border-radius:12px;box-shadow:0 6px 24px rgba(15,30,30,0.06)}
+
+/* Header */
+.header{background:linear-gradient(90deg,var(--accent),#3b6b6b);color:var(--white);padding:18px 24px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between}
+.header h1{margin:0;font-size:1.25rem}
+.header a{color:var(--white)}
+
+.nav-links{display:flex;gap:18px}
+.nav-links a{color:var(--white);opacity:0.95}
+
+/* Back arrow */
+.arrow-button{position:fixed;left:18px;top:18px;background:var(--white);color:var(--accent);border-radius:8px;padding:8px 12px;box-shadow:0 6px 18px rgba(10,20,20,0.08);font-weight:600}
+
+/* Typography helpers */
+h1,h2,h3{color:#0b1616}
+p{line-height:1.6;color:var(--muted)}
+
+/* Footer */
+footer{background:transparent;border-top:1px solid rgba(15,30,30,0.06);padding:18px 0;text-align:center;color:var(--muted);position:relative}
+
+/* Buttons */
+.button{display:inline-block;padding:10px 18px;background:var(--accent);color:var(--white);border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.button.secondary{background:#e8f4f4;color:var(--accent)}
+
+/* Responsive */
+@media (max-width:800px){
+  .container{margin:20px;padding:20px}
+  .header{flex-direction:column;gap:12px;align-items:flex-start}
+  .arrow-button{left:12px;top:12px}
+}
+
+/* Utility */
+.lead{font-size:1.05rem;color:#203232}
+.muted{color:var(--muted)}

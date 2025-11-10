@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome To Our Website</title>
+    <link rel="stylesheet" href="/stylesheets/site.css" />
     <link rel="stylesheet" href="/stylesheets/signup.css" />
-    <a href="/recipe/distrohome.html" class="arrow-button">←</a>
   </head>
   <body>
+    <a href="/recipe/distrohome.html" class="arrow-button" aria-label="Back">←</a>
     <h1>Sign Up</h1>
     <form action="/submit-signup" method="post">
       <label for="first-name">First Name:</label>
@@ -51,6 +52,8 @@
     </form>
     <div class="login-link">
       <p>Already have an account? <a href="/recipe/login.html">Log in</a></p>
+    </div>
 
+    <script src="/javascript/signup.js"></script>
   </body>
 </html>
