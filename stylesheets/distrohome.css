@@ -4,7 +4,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: white;
   color: #222;
-  height: 340vh;
 }
 
 .header {
@@ -49,10 +48,13 @@ h2:hover {
   font-size: 1em;
   margin-top: 20px;
   word-spacing: 2px;
-  padding: 0 20px;
+  padding: 12px 20px;
   border: 2px solid #225758;
   background-color: #3e6c6d;
-  width: 75%;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 12px auto;
 }
 
 .item {
@@ -63,40 +65,36 @@ h2:hover {
   margin: 20px;
 }
 .sidebar {
-  position: absolute;
-  top: 23%; /* adjust if your header height changes */
-  right: 0;
-  width: 250px;
-  height: calc(90vh - 60px); /* full height minus header */
+  /* Mobile-first: sidebar stacks below content */
+  position: static;
+  width: 100%;
+  height: auto;
   background-color: #3e6c6d;
-  color: yellow;
-  border-left: 2px solid #225758;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  overflow-y: auto;
-  text-decoration-thickness: 5px;
-  z-index: 1000;
+  color: #fff;
+  border-left: none;
+  box-shadow: none;
+  padding: 16px;
+  overflow: visible;
+  margin-top: 18px;
 }
 
 .sign-up-container {
-  position: fixed;
-  top: 43%;
-  left: 1%;
-  margin: 40px auto;
-  padding: 30px 40px;
+  /* Mobile-first: inline block under content */
+  position: static;
+  margin: 16px auto;
+  padding: 18px 20px;
   background-color: #238a8b;
-  border: 2px solid red;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(34, 87, 88, 0.15);
-  width: 300px;
-  max-width: 90%;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(34, 87, 88, 0.08);
+  width: calc(100% - 40px);
+  max-width: 360px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .sign-up-container:hover {
-  transform: scale(1.03) translateY(-5px);
-  box-shadow: 0 8px 28px rgba(34, 87, 88, 0.25);
-  border-color: #3e6c6d;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(34, 87, 88, 0.12);
 }
 
 .action-button {
@@ -167,6 +165,48 @@ li {
   background-color: #3e6c6d;
   list-style: none;
 }
+
+/* Desktop / large screens: place sidebar to the right and fix signup panel */
+@media (min-width: 900px) {
+  .container { max-width: 900px; }
+  .text-intro { width: 65%; padding: 20px; }
+
+  .sidebar {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 260px;
+    height: calc(60vh - 60px);
+    background-color: #3e6c6d;
+    color: yellow;
+    border-left: 2px solid #225758;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .sign-up-container {
+    position: fixed;
+    top: 8%;
+    right: 1%;
+    width: 220px;
+    max-width: 22%;
+    margin: 0;
+  }
+
+  /* add spacing so fixed footer doesn't cover content */
+  body { padding-bottom: 64px; }
+}
+
+/* Small phones tweaks */
+@media (max-width: 400px) {
+  .container { margin: 12px; padding: 12px; }
+  .text-intro { padding: 12px; font-size: 0.95rem; }
+  .upload-prompt { font-size: 1.05rem; }
+  .action-button { padding: 10px 16px; }
+}
+
 .footer a {
   color: #fff;
   text-decoration: none;
