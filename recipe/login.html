@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - DistroMusic</title>
+    <link rel="stylesheet" href="/stylesheets/site.css" />
+    <style>
+      .login-card{max-width:420px;margin:48px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(10,20,20,0.06)}
+      label{display:block;margin-top:12px;font-weight:600}
+      input[type=email],input[type=password]{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eaea;margin-top:6px}
+      .actions{margin-top:18px;display:flex;gap:12px;align-items:center}
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1><a href="/recipe/distrohome.html">DistroMusic.com</a></h1>
+      <nav class="nav-links">
+        <a href="/recipe/distrohome.html">Home</a>
+        <a href="/recipe/about.html">About</a>
+        <a href="/recipe/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="login-card">
+      <h2>Log in to your account</h2>
+      <div id="login-messages"></div>
+      <form id="login-form" action="#" method="post">
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" name="email" required />
+
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" name="password" required />
+
+        <div class="actions">
+          <button class="button" type="submit">Log in</button>
+          <a href="/recipe/signup.html" class="button secondary">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+    <script src="/javascript/login.js"></script>
+  </body>
+</html>

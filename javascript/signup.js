@@ -152,11 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Success
+      // Persist user locally so login can authenticate (use only for demo/local)
+      try {
+        const usersRaw = localStorage.getItem('users');
+        const users = usersRaw ? JSON.parse(usersRaw) : [];
+        // Do not store confirmPassword
+        users.push({ email: payload.email, password: payload.password, firstName: payload.firstName, surname: payload.surname, dob: payload.dob, nationality: payload.nationality, phone: payload.phone });
+        localStorage.setItem('users', JSON.stringify(users));
+      } catch (err) {
+        console.warn('Could not persist user locally', err);
+      }
+
       showMessages('Signup successful! Thank you — redirecting...', true);
       console.log('Signup payload:', payload);
       form.reset();
       // Optional: redirect after short delay
-      setTimeout(() => { window.location.href = '/recipe/distrohome.html'; }, 1100);
+      setTimeout(() => { window.location.href = '/recipe/login.html'; }, 900);
     } catch (err) {
       console.error('Signup failed', err);
       showMessages(['Network error: could not submit signup.']);
