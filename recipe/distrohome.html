@@ -15,38 +15,6 @@
         <a href="/recipe/contact.html">Contact</a>
       </nav>
     </header>
-    <h2>Songs</h2>
-    <div class="text-intro">
-      <p class="text-box">
-        Nigeria is known around the world for its rich culture, vibrant music,
-        and its ever-evolving music industry. From Afrobeat to Fuji, Nigerian
-        music can be found in clubs, on the radio, and on streaming services
-        around the world. But what is the latest in Nigerian music? In recent
-        years, the Latest Nigerian Songs scene has exploded with a range of
-        genres from afro-fusion to rap and hip-hop. Artists such as Wizkid,
-        Davido, and Tiwa Savage have taken the global music scene by storm, and
-        the latest Nigerian music is no exception.<br />
-        <b>Afrobeats:</b> Afrobeats is a genre of music which blends traditional
-        African sounds with contemporary styles from around the world. It has
-        become a popular genre in Nigeria, and its popularity has spread
-        internationally. Artists such as Burna Boy, Wizkid, Yemi Alade and Mr
-        Eazi are some of the most popular Afrobeats artists in Nigeria.
-        <b>Trap Music:</b> Trap music is a subgenre of hip-hop that originated
-        in the United States. It has become increasingly popular in Nigeria in
-        recent years, with artists such as Olamide, Naira Marley, and Zlatan
-        Ibile creating hit Latest Nigerian songs.<br />
-        <b>Fuji Music:</b> Fuji is a popular genre of music which originated in
-        Nigeria. It is a blend of traditional Yoruba music, percussion and
-        modern hip-hop. Fuji artists such as Pasuma, Wasiu Ayinde, and Obesere
-        are some of the most popular Nigerian musicians.<br />
-        <b>Gospel:</b> Gospel music is a popular genre of music in Nigeria. It
-        is a combination of traditional African and contemporary sounds and is
-        often used to praise God. Popular gospel artists in Nigeria include
-        Sinach, Frank Edwards, and Nathaniel Bassey. These are just a few of the
-        genres of music that are popular in Nigeria. As the Nigerian music
-        industry continues to evolve, it is sure to remain vibrant and exciting.
-      </p>
-    </div>
     <div class="container">
       <div class="example relative">
         <div class="item"></div>
@@ -95,43 +63,95 @@
         </div>
       </div>
     </div>
-    <aside class="sidebar">
-      <h3>Latest Music</h3>
-      <ul class="latest-music-list">
-        <li>Wizkid – Essence</li>
-        <li>Davido – Feel</li>
-        <li>Burna Boy – Last Last</li>
-        <li>Tiwa Savage – Somebody’s Son</li>
-        <li>Rema – Calm Down</li>
-        <li>Omah Lay – Understand</li>
-        <li>Asake – Sungba</li>
-        <li>Fireboy DML – Peru</li>
-        <li>Joeboy – Sip (Alcohol)</li>
-        <li>Tems – Free Mind</li>
-        <li>CKay – Love Nwantiti</li>
-        <li>Mayorkun – Holy Father</li>
-        <li>Ayra Starr – Rush</li>
-        <li>Pheelz – Finesse</li>
-        <li>Ladipoe – Feeling</li>
-        <li>BNXN (Buju) – Kilometer</li>
-        <li>Oxlade – Away</li>
-        <li>Wizkid – Essence</li>
-        <li>Davido – Feel</li>
-        <li>Burna Boy – Last Last</li>
-        <li>Tiwa Savage – Somebody’s Son</li>
-        <li>Rema – Calm Down</li>
-        <li>Omah Lay – Understand</li>
-        <li>Asake – Sungba</li>
-      </ul>
-    </aside>
-    <div class="sign-up-container">
-      <div class="sign-up-box">
-        <p class="upload-prompt">If you'd like to upload your Music Videos!</p>
-        <button class="action-button">
-          <a href="/recipe/signup.html">Tap Here</a>
-        </button>
-      </div>
-    </div>
+      <main class="site-main">
+        <section class="hero">
+          <div class="hero-inner container">
+            <div class="hero-text">
+              <h2>Discover Latest Nigerian Music</h2>
+              <p class="lead">Curated afrobeats, rap, fuji and gospel — new releases and trending videos all in one place.</p>
+              <div class="hero-actions">
+                <input id="site-search" class="search-input" type="search" placeholder="Search songs, artists or playlists" aria-label="Search music" />
+                <button id="ctaUpload" class="button">Upload / My Dashboard</button>
+              </div>
+            </div>
+            <div class="hero-art">
+              <img src="/Picture/ant.jpeg" alt="Music art" />
+            </div>
+          </div>
+        </section>
+
+        <section class="featured container">
+          <h3>Featured Tracks</h3>
+          <div class="grid grid-3">
+            <article class="card">
+              <img src="/Picture/horse-sun.jpeg" alt="Track cover" />
+              <h4>Essence — Wizkid</h4>
+              <p class="muted">Afrobeats • 2025</p>
+              <div class="card-actions">
+                <button class="button" data-action="play" data-track="Essence">Play</button>
+                <a class="button secondary" href="/recipe/signup.html">Save</a>
+              </div>
+            </article>
+            <article class="card">
+              <img src="/Picture/ant.jpeg" alt="Track cover" />
+              <h4>Last Last — Burna Boy</h4>
+              <p class="muted">Afrobeats • 2024</p>
+              <div class="card-actions">
+                <button class="button" data-action="play" data-track="Last Last">Play</button>
+                <a class="button secondary" href="/recipe/signup.html">Save</a>
+              </div>
+            </article>
+            <article class="card">
+              <img src="/Picture/ant.jpeg" alt="Track cover" />
+              <h4>Somebody's Son — Tiwa Savage</h4>
+              <p class="muted">Pop • 2025</p>
+              <div class="card-actions">
+                <button class="button" data-action="play" data-track="Somebody's Son">Play</button>
+                <a class="button secondary" href="/recipe/signup.html">Save</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="search-results" class="container" style="display:none;">
+          <h3>Search results for "<span id="search-query"></span>"</h3>
+          <div id="results-list" class="grid grid-3"></div>
+        </section>
+
+        <section class="videos container">
+          <h3>Trending Videos</h3>
+          <div class="grid grid-3 videos-grid">
+            <div class="video-card" data-title="Essence Live - Wizkid">
+              <iframe src="https://www.youtube.com/embed/YpU0wBOa3do" title="Essence Live - Wizkid" allowfullscreen></iframe>
+            </div>
+            <div class="video-card" data-title="Last Last - Burna Boy">
+              <iframe src="https://www.youtube.com/embed/gxwMNiABv44" title="Last Last - Burna Boy" allowfullscreen></iframe>
+            </div>
+            <div class="video-card" data-title="Somebody's Son - Tiwa Savage">
+              <iframe src="https://www.youtube.com/embed/j_DVv7xVHAk" title="Somebody's Son - Tiwa Savage" allowfullscreen></iframe>
+            </div>
+          </div>
+        </section>
+
+        <aside class="sidebar container">
+          <div class="side-section">
+            <h4>Latest Music</h4>
+            <input id="list-filter" type="search" placeholder="Filter list" class="search-input" />
+            <ul class="latest-music-list" id="latest-list">
+              <li>Wizkid – Essence</li>
+              <li>Davido – Feel</li>
+              <li>Burna Boy – Last Last</li>
+              <li>Tiwa Savage – Somebody’s Son</li>
+              <li>Rema – Calm Down</li>
+              <li>Omah Lay – Understand</li>
+              <li>Asake – Sungba</li>
+              <li>Fireboy DML – Peru</li>
+              <li>Joeboy – Sip (Alcohol)</li>
+              <li>Tems – Free Mind</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
     <div class="footer">
       <ul class="footer-flex-list">
         <nav>
@@ -141,6 +161,7 @@
         </nav>
       </ul>
     </div>
+    <script src="/javascript/distrohome.js"></script>
     <script src="/javascript/javascript.js"></script>
   </body>
 </html>
