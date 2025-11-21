@@ -134,43 +134,45 @@ document.addEventListener('DOMContentLoaded', () => {
       password: result.values.password
     };
 
-    // Mock submission: try to POST to form.action. If no backend, we'll still log it.
+    // Try to POST to form.action; if that fails or returns non-ok, fall back to local persistence
+    const action = form.getAttribute('action') || '/submit-signup';
+    let serverOk = false;
     try {
-      const action = form.getAttribute('action') || '/submit-signup';
       const res = await fetch(action, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-
-      if (!res.ok) {
-        // If server returns error, show message (but still parse body if available)
-        let text;
-        try { text = await res.text(); } catch (err) { text = res.statusText; }
-        showMessages([`Server error: ${res.status} ${text}`]);
-        return;
+      serverOk = !!res && res.ok;
+      if (!serverOk) {
+        console.warn('Server responded with non-ok status for signup:', res && res.status);
       }
-
-      // Success
-      // Persist user locally so login can authenticate (use only for demo/local)
-      try {
-        const usersRaw = localStorage.getItem('users');
-        const users = usersRaw ? JSON.parse(usersRaw) : [];
-        // Do not store confirmPassword
-        users.push({ email: payload.email, password: payload.password, firstName: payload.firstName, surname: payload.surname, dob: payload.dob, nationality: payload.nationality, phone: payload.phone });
-        localStorage.setItem('users', JSON.stringify(users));
-      } catch (err) {
-        console.warn('Could not persist user locally', err);
-      }
-
-      showMessages('Signup successful! Thank you — redirecting...', true);
-      console.log('Signup payload:', payload);
-      form.reset();
-      // Optional: redirect after short delay
-      setTimeout(() => { window.location.href = '/recipe/login.html'; }, 900);
     } catch (err) {
-      console.error('Signup failed', err);
-      showMessages(['Network error: could not submit signup.']);
+      console.warn('Signup POST failed (no backend?)', err);
     }
+
+    // Persist user locally so login can authenticate (use only for demo/local)
+    try {
+      const usersRaw = localStorage.getItem('users');
+      const users = usersRaw ? JSON.parse(usersRaw) : [];
+      // Avoid duplicate emails: replace if exists
+      const existingIndex = users.findIndex(u => u.email && u.email.toLowerCase() === payload.email.toLowerCase());
+      const userRecord = { email: payload.email, password: payload.password, firstName: payload.firstName, surname: payload.surname, dob: payload.dob, nationality: payload.nationality, phone: payload.phone };
+      if (existingIndex >= 0) users[existingIndex] = userRecord; else users.push(userRecord);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      // Auto-login: set currentUser so the user is taken to their dashboard immediately
+      const currentUser = { email: payload.email, firstName: payload.firstName, surname: payload.surname };
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    } catch (err) {
+      console.warn('Could not persist user locally', err);
+    }
+
+    // Success (server may or may not exist)
+    showMessages('Signup successful! Redirecting to your dashboard...', true);
+    console.log('Signup payload:', payload);
+    form.reset();
+    // Redirect to dashboard
+    setTimeout(() => { window.location.href = '/recipe/dashboard.html'; }, 700);
   });
 });

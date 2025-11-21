@@ -40,22 +40,18 @@ button.addEventListener("click", (draw) => {
 });
 
 function handleLogin() {
-  // If a user is already signed-in, go straight to their dashboard
-  try {
-    const current = JSON.parse(localStorage.getItem('currentUser') || 'null');
-    if (current && current.email) {
-      window.location.href = '/recipe/dashboard.html';
-      return;
-    }
-  } catch (e) {
-    // ignore parse errors
-  }
-  // Otherwise go to the login form
-  window.location.href = '/recipe/login.html';
+  window.location.href = "distrohome.html";
 }
 
-const loginButton = document.querySelector('.login-button');
-if (loginButton) loginButton.addEventListener('click', (e) => { e.preventDefault(); handleLogin(); });
+const loginButton = document.querySelector(".login-button");
+if (loginButton) {
+  loginButton.addEventListener("click", handleLogin);
+}
+
+// Function to handle the login button click
+function handleLogin() {
+  window.location.href = "distrohome.html";
+}
 
 function sumOfTripledEvens(array) {
   let sum = 0;
