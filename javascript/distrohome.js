@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Force phone display format for this page (mobile-first preview)
+  try { document.body.classList.add('force-phone'); } catch (err) {}
   // CTA button: go to dashboard when logged in, otherwise to signup
   const cta = document.getElementById('ctaUpload');
   if (cta) {

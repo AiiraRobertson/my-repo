@@ -263,3 +263,13 @@ li {
   .videos-grid iframe{height:180px}
 }
 
+/* Force phone mode overrides (applies when body has .force-phone) */
+.force-phone .hero-inner{flex-direction:column-reverse !important}
+.force-phone .grid-3{grid-template-columns:1fr !important}
+.force-phone .videos-grid iframe{height:180px !important}
+.force-phone .sidebar{position:static !important;width:100% !important;box-shadow:none !important;margin-top:18px !important}
+.force-phone .sign-up-container{position:static !important;width:100% !important;max-width:360px !important}
+.force-phone .hero-art img{max-width:280px}
+.force-phone .container{padding:12px}
+.force-phone .card img{height:120px}
+
