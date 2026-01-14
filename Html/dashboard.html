@@ -1,63 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Dashboard - DistroMusic</title>
-    <link rel="stylesheet" href="/stylesheets/site.css" />
-    <style>
-      .dashboard{max-width:1100px;margin:40px auto;padding:20px}
-      .profile-card{display:flex;gap:18px;align-items:center;padding:18px;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(10,20,20,0.06)}
-      .avatar{width:88px;height:88px;border-radius:12px;background:linear-gradient(135deg,#3e6c6d,#2f6f6f);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.4rem}
-      .stats{display:flex;gap:18px;margin-top:18px}
-      .stat{flex:1;padding:14px;background:var(--card);border-radius:10px;text-align:center}
-      .welcome{margin-top:12px}
-    </style>
-  </head>
-  <body>
-    <header class="header">
-      <h1><a href="/recipe/distrohome.html">DistroMusic.com</a></h1>
-      <nav class="nav-links">
-        <a href="/recipe/distrohome.html">Home</a>
-        <a href="/recipe/about.html">About</a>
-        <a href="/recipe/contact.html">Contact</a>
-      </nav>
-    </header>
 
-    <main class="dashboard">
-      <section class="profile-card">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - DistroMusic</title>
+  <link rel="stylesheet" href="/stylesheets/site.css" />
+  <style>
+    .dashboard {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px
+    }
+
+    .profile-card {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(10, 20, 20, 0.06)
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3e6c6d, #2f6f6f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.4rem;
+      overflow: hidden
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .stats {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px
+    }
+
+    .stat {
+      flex: 1;
+      padding: 14px;
+      background: var(--card);
+      border-radius: 10px;
+      text-align: center
+    }
+
+    .welcome {
+      margin-top: 12px
+    }
+
+    .uploads-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px
+    }
+
+    .uploads-table th,
+    .uploads-table td {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+      text-align: left
+    }
+
+    .small-muted {
+      color: #666;
+      font-size: .95rem
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1><a href="/recipe/distrohome.html">DistroMusic.com</a></h1>
+    <nav class="nav-links">
+      <a href="/recipe/distrohome.html">Home</a>
+      <a href="/recipe/about.html">About</a>
+      <a href="/recipe/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <section class="profile-card">
+      <div style="display:flex;align-items:center;gap:12px">
         <div class="avatar" id="avatar">U</div>
         <div>
           <h2 id="fullname">User</h2>
-          <div class="muted" id="email">user@example.com</div>
+          <div class="muted">
+            <span id="email">user@example.com</span>
+            <span id="emailStatus" class="small-muted" style="margin-left:8px">(Unverified)</span>
+          </div>
           <div class="welcome" id="welcome">Welcome back!</div>
+          <div style="margin-top:8px">
+            <input id="avatarInput" type="file" accept="image/*" style="display:none" />
+            <button id="changeAvatarBtn" class="button">Change picture</button>
+            <button id="removeAvatarBtn" class="button link" style="display:none">Remove</button>
+            <button id="sendVerificationBtn" class="button secondary" style="margin-left:6px">Send verification</button>
+            <button id="markVerifiedBtn" class="button link" style="display:none">Mark verified (dev)</button>
+          </div>
         </div>
-        <div style="margin-left:auto">
-          <button id="logoutBtn" class="button secondary">Log out</button>
-        </div>
-      </section>
+      </div>
+      <div style="margin-left:auto">
+        <button id="logoutBtn" class="button secondary">Log out</button>
+      </div>
+    </section>
 
-      <section class="stats" aria-label="user stats">
-        <div class="stat">
-          <div class="muted">Uploaded Tracks</div>
-          <div id="uploads" style="font-weight:700;font-size:1.25rem">0</div>
-        </div>
-        <div class="stat">
-          <div class="muted">Followers</div>
-          <div id="followers" style="font-weight:700;font-size:1.25rem">0</div>
-        </div>
-        <div class="stat">
-          <div class="muted">Playlists</div>
-          <div id="playlists" style="font-weight:700;font-size:1.25rem">0</div>
-        </div>
-      </section>
+    <section class="stats" aria-label="user stats">
+      <div class="stat">
+        <div class="muted">Uploaded Tracks</div>
+        <div id="uploads" style="font-weight:700;font-size:1.25rem">0</div>
+      </div>
+      <div class="stat">
+        <div class="muted">Followers</div>
+        <div id="followers" style="font-weight:700;font-size:1.25rem">0</div>
+      </div>
+      <div class="stat">
+        <div class="muted">Playlists</div>
+        <div id="playlists" style="font-weight:700;font-size:1.25rem">0</div>
+      </div>
+      <div class="stat">
+        <div class="muted">Streams</div>
+        <div id="streams" style="font-weight:700;font-size:1.25rem">0</div>
+      </div>
+    </section>
 
-      <section style="margin-top:20px">
-        <h3>Your recent uploads</h3>
-        <div id="recentUploads">No uploads yet.</div>
-      </section>
-    </main>
+    <section style="margin-top:20px">
+      <h3>Your recent uploads</h3>
+      <div id="recentUploads">No uploads yet.</div>
+    </section>
+  </main>
 
-    <script src="/javascript/dashboard.js"></script>
-  </body>
+  <script src="/javascript/dashboard.js"></script>
+</body>
+
 </html>
