@@ -1,6 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Force phone display format for this page (mobile-first preview)
-  try { document.body.classList.add('force-phone'); } catch (err) {}
+  try { document.body.classList.add('force-phone'); } catch (err) { }
+
+  // Dropdown toggle functionality
+  const dropdownBtn = document.getElementById('dropdown-toggle');
+  const dropdownContent = document.getElementById('dropdown-content');
+
+  if (dropdownBtn && dropdownContent) {
+    dropdownBtn.addEventListener('click', () => {
+      dropdownContent.classList.toggle('active');
+      dropdownBtn.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.side-section')) {
+        dropdownContent.classList.remove('active');
+        dropdownBtn.classList.remove('active');
+      }
+    });
+  }
+
   // CTA button: go to dashboard when logged in, otherwise to signup
   const cta = document.getElementById('ctaUpload');
   if (cta) {
@@ -42,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       const track = btn.getAttribute('data-track') || 'Track';
       // Simple demo: set localStorage lastPlayed and show a small toast
-      try { localStorage.setItem('lastPlayed', track); } catch (err) {}
+      try { localStorage.setItem('lastPlayed', track); } catch (err) { }
       const toast = document.createElement('div');
       toast.textContent = `Playing preview: ${track} (demo)`;
       toast.style.position = 'fixed';
@@ -149,4 +169,105 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-});
+  // Video Like/Dislike functionality
+  const videoReactions = {};
+
+  function initReactions() {
+    try {
+      const saved = localStorage.getItem('videoReactions');
+      if (saved) {
+        Object.assign(videoReactions, JSON.parse(saved));
+      }
+    } catch (err) {
+      console.error('Error loading reactions:', err);
+    }
+    updateAllReactionCounts();
+  }
+
+  function updateAllReactionCounts() {
+    document.querySelectorAll('.like-btn').forEach(btn => {
+      const videoId = btn.getAttribute('data-video-id');
+      const key = `like_${videoId}`;
+      const count = videoReactions[key] || 0;
+      btn.querySelector('.like-count').textContent = count;
+    });
+
+    document.querySelectorAll('.dislike-btn').forEach(btn => {
+      const videoId = btn.getAttribute('data-video-id');
+      const key = `dislike_${videoId}`;
+      const count = videoReactions[key] || 0;
+      btn.querySelector('.dislike-count').textContent = count;
+    });
+
+    updateButtonStates();
+  }
+
+  function updateButtonStates() {
+    const userChoice = localStorage.getItem('userVideoChoice');
+    const choices = userChoice ? JSON.parse(userChoice) : {};
+
+    document.querySelectorAll('.reaction-btn').forEach(btn => {
+      const videoId = btn.getAttribute('data-video-id');
+      const isLike = btn.classList.contains('like-btn');
+      const choice = choices[videoId];
+
+      btn.classList.remove('active');
+      btn.disabled = false;
+
+      if (choice === 'like' && isLike) {
+        btn.classList.add('active');
+      } else if (choice === 'dislike' && !isLike) {
+        btn.classList.add('active');
+      }
+
+      if (choice && choice !== (isLike ? 'like' : 'dislike')) {
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+      } else {
+        btn.style.opacity = '1';
+        btn.disabled = false;
+      }
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    const likeBtn = e.target.closest('.like-btn');
+    const dislikeBtn = e.target.closest('.dislike-btn');
+
+    if (likeBtn) handleReaction(likeBtn, 'like');
+    if (dislikeBtn) handleReaction(dislikeBtn, 'dislike');
+  });
+
+  function handleReaction(btn, reactionType) {
+    const videoId = btn.getAttribute('data-video-id');
+    const userChoice = localStorage.getItem('userVideoChoice');
+    const choices = userChoice ? JSON.parse(userChoice) : {};
+    const currentChoice = choices[videoId];
+
+    if (currentChoice === reactionType) {
+      // User is clicking the same button - remove vote
+      delete choices[videoId];
+      videoReactions[`${reactionType}_${videoId}`]--;
+    } else if (currentChoice) {
+      // User already voted for the other option - switch vote
+      videoReactions[`${currentChoice}_${videoId}`]--;
+      videoReactions[`${reactionType}_${videoId}`] = (videoReactions[`${reactionType}_${videoId}`] || 0) + 1;
+      choices[videoId] = reactionType;
+    } else {
+      // First vote
+      videoReactions[`${reactionType}_${videoId}`] = (videoReactions[`${reactionType}_${videoId}`] || 0) + 1;
+      choices[videoId] = reactionType;
+    }
+
+    try {
+      localStorage.setItem('videoReactions', JSON.stringify(videoReactions));
+      localStorage.setItem('userVideoChoice', JSON.stringify(choices));
+    } catch (err) {
+      console.error('Error saving reactions:', err);
+    }
+
+    updateAllReactionCounts();
+  }
+
+  initReactions();
+
